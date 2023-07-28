@@ -223,12 +223,10 @@ class SumoIntersection:
 
         for i in range(len(laness)):
             if len(weight_matrix) != 0 and v in wgMatrix:
-                reward_wt += wgMatrix[v] \
-                    * traci.lane.getWaitingTime(laness[i])
+                reward_wt += wgMatrix[v] * traci.lane.getWaitingTime(laness[i])
         for i in range(len(laness)):
             if len(weight_matrix) != 0 and v in wgMatrix:
-                reward_ql += wgMatrix[v] \
-                    * traci.lane.getLastStepHaltingNumber(laness[i])
+                reward_ql += wgMatrix[v] * traci.lane.getLastStepHaltingNumber(laness[i])
         final_reward = reward_wt + reward_ql
         return [final_reward]
 
